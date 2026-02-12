@@ -4,7 +4,7 @@ FROM alpine:3.19
 RUN printf '%s\n' '#!/bin/sh' \
 'zeros=$(printf "%4090s" "" | tr " " "0")' \
 'while true; do' \
-'  printf "%s123456789" "$zeros"' \
+'  printf "%s123456789\n" "$zeros"' \
 '  sleep 60' \
 'done' > /log-writer.sh \
 && chmod +x /log-writer.sh
